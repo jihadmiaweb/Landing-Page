@@ -157,7 +157,7 @@
 
     <!-- commitnct-sistione-start -->
     <section class="">
-        <div class="max-w-7xl mx-auto px-10">
+        <div class="max-w-7xl mx-auto px-10 ">
             <div style="background-image: url(./asstas/Group.png) ;"
                 class=" bg-no-repeat   bg py-12 bg-right  bg-opacity-50 z-100 rounded-2xl mb-10 px-10   bg-[#FFFFFF1A] border border-gray-800">
 
@@ -253,6 +253,36 @@
 
 
     <!-- Learn more about Crypgo sistione-start -->
+    <script>
+        const faqs = document.querySelectorAll(".faq-item");
+
+        faqs.forEach(item => {
+            item.addEventListener("click", () => {
+
+                // আগে সব বন্ধ করো
+                faqs.forEach(other => {
+                    if (other !== item) {
+                        other.querySelector(".answer").classList.add("hidden");
+                        other.querySelector(".icon").innerText = "+";
+                    }
+                });
+
+                // এখন current টা toggle করো
+                const answer = item.querySelector(".answer");
+                const icon = item.querySelector(".icon");
+
+                answer.classList.toggle("hidden");
+
+                if (answer.classList.contains("hidden")) {
+                    icon.innerText = "+";
+                } else {
+                    icon.innerText = "−";
+                }
+            });
+        });
+    </script>
+
+
     <section>
         <div class="max-w-7xl h-screen mx-auto px-10 ">
             <div class="text-center pb-10">
